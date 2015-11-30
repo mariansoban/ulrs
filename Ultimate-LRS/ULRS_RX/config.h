@@ -40,7 +40,10 @@ unsigned char read_8bit_data(void);
 void to_tx_mode(void);
 void  Hopping(void);
 
-#define POWER 7
+
+// XXX [ms] 1way
+//#define POWER 7
+#define POWER 0
 bool debug = false;
 long rssi_timer = 0;
 
@@ -77,7 +80,8 @@ serial_ppm_type_enum ppm_type = MIXED;
 unsigned long CARRIER_FREQUENCY = 432000;
 unsigned char HOPPING_STEP_SIZE = 6;
 static unsigned char hop_list[3] = { 45, 50, 55};
-static unsigned char RF_Header[4] = {'F', 'L', 'I', 'P'};
+// XXX [ms] 1way
+static unsigned char RF_Header[4] = {'S', 'O', 'B', 'I'};
 
 #define SERIAL_BAUD_RATE 19200
 

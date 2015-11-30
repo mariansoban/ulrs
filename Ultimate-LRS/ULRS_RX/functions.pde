@@ -212,7 +212,9 @@ void Telemetry_Write(void)
 
 void Telemetry_Bridge_Write(void)
 {
+    // XXX [ms] 1way
 	blue_led(true);
+    /*
 	RF_Tx_Buffer[0] = 'B';
 	fill_fifo();
 	byte total_rx_byte = fifo_available();
@@ -231,8 +233,8 @@ void Telemetry_Bridge_Write(void)
 			RF_Tx_Buffer[2 + i] = fifo_read();
 		}
 	}
-
 	to_tx_mode();
+    */
 	rx_reset();
 	RF_Tx_Buffer[1] = 0;
 	RF_Tx_Buffer[2] = 0;

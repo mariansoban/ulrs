@@ -134,7 +134,8 @@ void loop()
 			rx_reset();
 		}
 
-		rssi();
+		// XXX [ms] 1way
+		// rssi();
 
 		if (nIRQ_0)
 		{
@@ -178,6 +179,8 @@ void loop()
 
 			if (total_rx_byte > 0)
 			{
+			    // XXX [ms] 1way
+			    /*
 				RF_Tx_Buffer[0] = 'B';
 
 				if (total_rx_byte > RF_PACK_SIZE_UP - 2)
@@ -191,6 +194,7 @@ void loop()
 				{
 					RF_Tx_Buffer[2 + i] = fifo_read();
 				}
+				*/
 			}
 
 			else
@@ -243,7 +247,8 @@ void loop()
 			Hopping();
 			rx_reset();
 
-			if (Rx_Pack_Received >= Lost_Package_Alert)
+			// XXX [ms] 1way
+			if (false && Rx_Pack_Received >= Lost_Package_Alert)
 			{
 				Rx_RSSI = 0;
 				analogWrite(RSSI_out_pin, 0);
@@ -259,7 +264,8 @@ void loop()
 				digitalWrite(BUZZER, LOW);
 			}
 
-			Rx_Pack_Received++;
+			// XXX [ms] 1way
+			// Rx_Pack_Received++;
 		}
 	}
 }
