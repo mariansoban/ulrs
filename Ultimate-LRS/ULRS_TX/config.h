@@ -1,35 +1,35 @@
 /*****************************************************************************************************
-***         Ultimate LRS - Long Range RC & Data Link using 2 x 1W 433 MHz OrangeRX modules         ***
-***                                                                                                ***
-*** Copyright 2014-2015 Benoit Joassart    benoit@joassart.com                                     ***
-***                                        rcgroups.com : flipflap                                 ***
-***                     Project website : http://www.itluxembourg.lu/site/                         ***
-***                                                                                                ***
-*** Contains code from OpenLRS ( http://code.google.com/p/openlrs/ )                               ***
-***   Copyright 2010-2012 Melih Karakelle ( http://www.flytron.com ) (forum nick name: Flytron)    ***
-***                     Jan-Dirk Schuitemaker ( http://www.schuitemaker.org/ ) (CrashingDutchman)  ***
-***                     Etienne Saint-Paul ( http://www.gameseed.fr ) (forum nick name: Etienne)   ***
-***                     thUndead (forum nick name: thUndead)                                       ***
-***                                                                                                ***
-******************************************************************************************************
+ ***         Ultimate LRS - Long Range RC & Data Link using 2 x 1W 433 MHz OrangeRX modules         ***
+ ***                                                                                                ***
+ *** Copyright 2014-2015 Benoit Joassart    benoit@joassart.com                                     ***
+ ***                                        rcgroups.com : flipflap                                 ***
+ ***                     Project website : http://www.itluxembourg.lu/site/                         ***
+ ***                                                                                                ***
+ *** Contains code from OpenLRS ( http://code.google.com/p/openlrs/ )                               ***
+ ***   Copyright 2010-2012 Melih Karakelle ( http://www.flytron.com ) (forum nick name: Flytron)    ***
+ ***                     Jan-Dirk Schuitemaker ( http://www.schuitemaker.org/ ) (CrashingDutchman)  ***
+ ***                     Etienne Saint-Paul ( http://www.gameseed.fr ) (forum nick name: Etienne)   ***
+ ***                     thUndead (forum nick name: thUndead)                                       ***
+ ***                                                                                                ***
+ ******************************************************************************************************
 
-					This file is part of Ultimate LRS.
+ This file is part of Ultimate LRS.
 
-					Ultimate LRS is free software: you can redistribute it and/or modify
-					it under the terms of the GNU General Public License as published by
-					the Free Software Foundation, either version 3 of the License, or
-					(at your option) any later version.
+ Ultimate LRS is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
 
-					Ultimate LRS is distributed in the hope that it will be useful,
-					but WITHOUT ANY WARRANTY; without even the implied warranty of
-					MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-					GNU General Public License for more details.
+ Ultimate LRS is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
 
-					You should have received a copy of the GNU General Public License
-					along with Ultimate LRS.  If not, see <http://www.gnu.org/licenses/>.
+ You should have received a copy of the GNU General Public License
+ along with Ultimate LRS.  If not, see <http://www.gnu.org/licenses/>.
 
-					This project must be compiled with Arduino 1.5.8.
-*/
+ This project must be compiled with Arduino 1.5.8.
+ */
 
 void RF22B_init_parameter(void);
 void _spi_write(unsigned char address, unsigned char data);
@@ -57,27 +57,21 @@ unsigned char HOPPING_STEP_SIZE = 6;
 
 #define FREQUENCY_HOPPING 1
 
-static unsigned char hop_list[3] = { 45, 50, 55};
+static unsigned char hop_list[3] = { 45, 50, 55 };
 
-enum board_type_enum
-{
-	RX_V1_BOARD,
-	RX_V2_BOARD,
-	TX_BOARD
+enum board_type_enum {
+    RX_V1_BOARD, RX_V2_BOARD, TX_BOARD
 };
 
 board_type_enum rx_board = TX_BOARD;
 
-enum rf_rate_enum
-{
-	rate_57K,
-	rate_125K,
-	rate_125KOOK
+enum rf_rate_enum {
+    rate_57K, rate_125K, rate_125KOOK
 };
 
 rf_rate_enum rf_rate = rate_57K;
 
-static unsigned char RF_Header[4] = {'F', 'L', 'I', 'P'};
+static unsigned char RF_Header[4] = { 'F', 'L', 'I', 'P' };
 #define SERIAL_BAUD_RATE 115200
 
 #define Lost_Package_Alert 3
