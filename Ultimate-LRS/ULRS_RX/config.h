@@ -69,7 +69,7 @@ serial_ppm_type_enum ppm_type = MIXED;
 unsigned long CARRIER_FREQUENCY = 432000;
 unsigned char HOPPING_STEP_SIZE = 6;
 static unsigned char hop_list[3] = { 45, 50, 55 };
-static unsigned char RF_Header[4] = { 'F', 'L', 'I', 'P' };
+static unsigned char RF_Header[4] = { 'S', 'O', 'B', 'I' };
 
 #define SERIAL_BAUD_RATE 19200
 

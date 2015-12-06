@@ -71,7 +71,7 @@ enum rf_rate_enum {
 
 rf_rate_enum rf_rate = rate_57K;
 
-static unsigned char RF_Header[4] = { 'F', 'L', 'I', 'P' };
+static unsigned char RF_Header[4] = { 'S', 'O', 'B', 'I' };
 #define SERIAL_BAUD_RATE 115200
 
 #define Lost_Package_Alert 3
