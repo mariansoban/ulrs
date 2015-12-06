@@ -95,6 +95,7 @@ static unsigned char hopping_channel = 1;
 unsigned long time, old_time = 0, old_rssi = 0;
 
 unsigned char Rx_Pack_Received = 0;
+bool data_received = false; // XXX [ms] buzzer fix when no signal yet
 unsigned char Rx_RSSI = 110;
 unsigned char Tx_RSSI = 110;
 

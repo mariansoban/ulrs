@@ -155,6 +155,7 @@ void loop() {
             }
 
             Rx_Pack_Received = 0;
+            data_received = true; // XXX [ms] buzzer fix when no signal yet
             red_led(false);
         }
 
@@ -224,7 +225,7 @@ void loop() {
                 Rx_RSSI = 0;
                 analogWrite(RSSI_out_pin, 0);
 
-                if (IsBuzzerEnabled) {
+                if (data_received && IsBuzzerEnabled) { // XXX [ms] buzzer fix when no signal yet
                     digitalWrite(BUZZER, HIGH);
                 }
             }
